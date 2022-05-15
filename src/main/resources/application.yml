@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: authuser-service
+          uri: lb://AUTHUSER-SERVICE
+          #urihttp://localhost:8087/
+          predicates:
+            - Path=/authuser/**
+        - id: appointment-service
+          uri: lb://APPOINTMENT-SERVICE
+          #urihttp://localhost:8082/
+          predicates:
+            - Path=/appointment/**
+
+serviceRegistry:
+  username: serviceregistry
+  password: '123sr'
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: 'http://${serviceRegistry.username}:${serviceRegistry.password}@localhost:8761/eureka'
+  instance:
+    hostname: localhost
