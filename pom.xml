@@ -11,8 +11,8 @@
     <groupId>br.com.projeto</groupId>
     <artifactId>project-api-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>project-api-gateway</name>
-    <description>project-api-gateway</description>
+    <name>api-gateway</name>
+    <description>api-gateway</description>
     <properties>
         <java.version>8</java.version>
         <spring-cloud.version>2021.0.2</spring-cloud.version>
@@ -33,6 +33,16 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
 
     </dependencies>
